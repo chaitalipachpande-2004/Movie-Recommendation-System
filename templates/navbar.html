@@ -1,0 +1,139 @@
+<style>
+
+    .navbar{
+        background:#000;
+        border-bottom:2px solid gold;
+        padding:20px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        color:gold;
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .nav-links{
+        display:flex;
+        align-items:center;
+    }
+
+    .nav-links a{
+        color:white;
+        text-decoration:none;
+        margin-left:20px;
+        font-weight:bold;
+    }
+
+    .nav-links a:hover{
+        color:gold;
+    }
+
+    .dropdown{
+        position:relative;
+        display:inline-block;
+        margin-left:20px;
+    }
+
+    .dropbtn{
+        background:none;
+        border:none;
+        color:white;
+        font-size:16px;
+        font-weight:bold;
+        cursor:pointer;
+    }
+
+    .dropbtn:hover{
+        color:gold;
+    }
+
+    .dropdown-content{
+        display:none;
+        position:absolute;
+        right:0;
+        background:#1b1b1b;
+        min-width:180px;
+        border:1px solid gold;
+        border-radius:8px;
+        overflow:hidden;
+        z-index:1000;
+    }
+
+    .dropdown-content a{
+        display:block;
+        padding:12px;
+        color:white;
+        text-decoration:none;
+        margin:0;
+    }
+
+    .dropdown-content a:hover{
+        background:#333;
+        color:gold;
+    }
+
+    .dropdown:hover .dropdown-content{
+        display:block;
+    }
+
+</style>
+
+<div class="navbar">
+    <div class="logo">
+    🎬 Movie Recommender
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">🏠 Home</a>
+
+        <a href="/feedback">⭐ Feedback</a>
+
+        <a href="/history">📜 History</a>
+
+        {% if 'user_id' in session %}
+
+            <div class="dropdown">
+
+                <button class="dropbtn">
+                    👤 {{ session['username'] }} ▼
+                </button>
+
+                <div class="dropdown-content">
+
+                    <a href="/profile">👤 Profile</a>
+
+                    <a href="/history">📜 History</a>
+
+                    <a href="/logout">🚪 Logout</a>
+
+                </div>
+
+            </div>
+
+        {% else %}
+
+        <div class="dropdown">
+
+            <button class="dropbtn">
+                  👤 Account ▼
+            </button>
+
+                <div class="dropdown-content">
+
+                    <a href="/login">🔑 Login</a>
+
+                    <a href="/register">📝 Register</a>
+
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>

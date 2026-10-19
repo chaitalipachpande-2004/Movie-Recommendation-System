@@ -1,0 +1,483 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:#111;
+            color:white;
+        }
+
+        .navbar{
+            background:#000;
+            border-bottom:2px solid gold;
+            padding:20px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            color:gold;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .container{
+            width:90%;
+            max-width:1000px;
+            margin:40px auto;
+        }
+
+        .profile-header{
+            background:#1b1b1b;
+            border:2px solid gold;
+            border-radius:20px;
+            padding:30px;
+            text-align:center;
+        }
+
+        .avatar{
+            font-size:90px;
+        }
+
+        .username{
+            color:gold;
+            font-size:32px;
+            margin-top:10px;
+        }
+
+        .email{
+            color:#ccc;
+            margin-top:10px;
+        }
+
+        .stats{
+            margin-top:40px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:#1b1b1b;
+            border-radius:15px;
+            padding:25px;
+            text-align:center;
+            border:2px solid #333;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            border-color:gold;
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            color:gold;
+            margin-bottom:10px;
+        }
+
+        .card-value{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .section{
+            margin-top:40px;
+            background:#1b1b1b;
+            border-radius:15px;
+            padding:25px;
+            border:2px solid #333;
+        }
+
+        .section h2{
+            color:gold;
+            margin-bottom:20px;
+        }
+
+        .actions{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .actions a{
+            display:inline-block;
+            margin:10px;
+            padding:12px 25px;
+            background:gold;
+            color:black;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+        }
+
+        .actions a:hover{
+            background:#ffd700;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🎬 Movie Recommender
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="profile-header">
+
+            <div class="avatar">
+                👤
+            </div>
+
+            <div class="username">
+                {{ user[0] }}
+            </div>
+
+            <div class="email">
+                {{ user[1] }}
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3>🎬 Total Searches</h3>
+                <div class="card-value">
+                    {{ total_searches }}
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>⭐ Feedback Given</h3>
+                <div class="card-value">
+                    {{ total_feedback }}
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🏆 Status</h3>
+                <div class="card-value">
+                    Active
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <div class="section">
+
+            <h2>🎥 About This Account</h2>
+
+            <p>
+                This profile stores your movie searches,
+                recommendation history, feedback and activity
+                inside the Movie Recommendation System.
+            </p>
+
+        </div> -->
+
+        <!-- <div class="actions">
+
+            <a href="/">🏠 Home</a>
+
+            <a href="/history">📜 History</a>
+
+            <a href="/feedback">⭐ Feedback</a>
+
+            <a href="/logout">🚪 Logout</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html> --> -->
+
+<!DOCTYPE html><html>
+<head>
+    <title>My Profile</title><style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+    }
+
+    body{
+        background:#111;
+        color:white;
+    }
+
+    .navbar{
+        background:#000;
+        border-bottom:2px solid gold;
+        padding:20px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        color:gold;
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .container{
+        width:90%;
+        max-width:1000px;
+        margin:40px auto;
+    }
+
+    .profile-header{
+        background:#1b1b1b;
+        border:2px solid gold;
+        border-radius:20px;
+        padding:30px;
+        text-align:center;
+    }
+
+    .avatar{
+        font-size:90px;
+    }
+
+    .username{
+        color:gold;
+        font-size:32px;
+        margin-top:10px;
+    }
+
+    .email{
+        color:#ccc;
+        margin-top:10px;
+    }
+
+    .stats{
+        margin-top:40px;
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:20px;
+    }
+
+    .card{
+        background:#1b1b1b;
+        border-radius:15px;
+        padding:25px;
+        text-align:center;
+        border:2px solid #333;
+        transition:0.3s;
+    }
+
+    .card:hover{
+        border-color:gold;
+        transform:translateY(-5px);
+    }
+
+    .card h3{
+        color:gold;
+        margin-bottom:10px;
+    }
+
+    .card-value{
+        font-size:28px;
+        font-weight:bold;
+    }
+
+    .section{
+        margin-top:40px;
+        background:#1b1b1b;
+        border-radius:15px;
+        padding:25px;
+        border:2px solid #333;
+    }
+
+    .section h2{
+        color:gold;
+        margin-bottom:20px;
+    }
+
+    .section p{
+        margin-bottom:10px;
+        font-size:18px;
+    }
+
+    .section ul{
+        margin-left:25px;
+        line-height:2;
+    }
+
+    .actions{
+        text-align:center;
+        margin-top:40px;
+    }
+
+    .actions a{
+        display:inline-block;
+        margin:10px;
+        padding:12px 25px;
+        background:gold;
+        color:black;
+        text-decoration:none;
+        border-radius:10px;
+        font-weight:bold;
+    }
+
+    .actions a:hover{
+        background:#ffd700;
+    }
+
+    @media (max-width:768px)
+    {
+
+        .profile-header{
+            padding:20px;
+        }
+
+        .username{
+            font-size:24px;
+        }
+
+    }
+
+</style>
+
+</head>
+<body>
+        <!--navbar code added-->
+        {% include 'navbar.html' %}
+
+
+<div class="container">
+
+    <div class="profile-header">
+
+        <div class="avatar">
+            👤
+        </div>
+
+        <div class="username">
+            {{ user[0] }}
+        </div>
+
+        <div class="email">
+            {{ user[1] }}
+        </div>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="card">
+            <h3>🎬 Total Searches</h3>
+            <div class="card-value">
+                {{ total_searches }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>⭐ Feedback Given</h3>
+            <div class="card-value">
+                {{ total_feedback }}
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🏆 Status</h3>
+            <div class="card-value">
+                Active
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <h2>📊 Recommendation Statistics</h2>
+
+        <p>
+            🎬 Content-Based Searches:
+            <strong>{{ content_count }}</strong>
+        </p>
+
+        <p>
+            🤝 Collaborative Searches:
+            <strong>{{ collaborative_count }}</strong>
+        </p>
+
+        <p>
+            ⚡ Hybrid Searches:
+            <strong>{{ hybrid_count }}</strong>
+        </p>
+
+        <p>
+            🏆 Favorite Method:
+            <strong style="color:gold;">
+                {{ favorite_method }}
+            </strong>
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>🎬 Recent Searches</h2>
+
+        {% if recent_movies %}
+
+            <ul>
+
+                {% for movie in recent_movies %}
+
+                    <li>{{ movie[0] }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% else %}
+
+            <p>No searches found.</p>
+
+        {% endif %}
+
+    </div>
+
+    <div class="actions">
+
+        <a href="/">🏠 Home</a>
+
+        <a href="/history">📜 History</a>
+
+        <a href="/feedback">⭐ Feedback</a>
+
+        <a href="/logout">🚪 Logout</a>
+
+        <a href="/change_password">🔒 Change Password</a>
+
+    </div>
+
+</div>
+
+    <!--adding footer-->
+    {% include 'footer.html' %}
+
+</body>
+</html>

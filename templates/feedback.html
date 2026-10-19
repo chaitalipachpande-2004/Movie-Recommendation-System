@@ -1,0 +1,89 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Feedback</title><style>
+    body{
+        background:#111;
+        color:white;
+        font-family:Arial,sans-serif;
+    }
+
+    .container{
+        width:50%;
+        margin:50px auto;
+        background:#1b1b1b;
+        padding:30px;
+        border-radius:15px;
+        border:2px solid gold;
+    }
+
+    h1{
+        text-align:center;
+        color:gold;
+    }
+
+    input, textarea, select{
+        width:100%;
+        padding:12px;
+        margin-top:10px;
+        margin-bottom:20px;
+        border-radius:8px;
+        border:none;
+    }
+
+    button{
+        width:100%;
+        background:gold;
+        color:black;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        font-weight:bold;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#ffd700;
+    }
+</style>
+
+</head>
+<body>
+    
+    <!--navbar code added-->
+    {% include 'navbar.html' %}
+<div class="container">
+<h1>Movie Feedback</h1>
+
+<form action="/submit_feedback" method="POST">
+
+    <label>Rating</label>
+
+    <select name="rating" required>
+        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+        <option value="4">⭐⭐⭐⭐ Good</option>
+        <option value="3">⭐⭐⭐ Average</option>
+        <option value="2">⭐⭐ Poor</option>
+        <option value="1">⭐ Very Poor</option>
+    </select>
+
+    <label>Your Feedback</label>
+
+    <textarea
+        name="feedback_text"
+        rows="5"
+        placeholder="Enter your feedback..."
+        required>
+    </textarea>
+
+    <button type="submit">
+        Submit Feedback
+    </button>
+
+</form>
+
+</div>
+    <!--adding footer-->
+    {% include 'footer.html' %}
+
+</body>
+</html>

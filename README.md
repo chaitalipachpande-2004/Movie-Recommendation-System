@@ -58,11 +58,7 @@ The project uses movie information and, where applicable, user ratings and tags 
 
 ##  Future Enhancements
 - Improve recommendation accuracy.
-- Develop a responsive user interface.
 - Add movie posters, ratings, and detailed information.
 - Enhance the recommendation process using additional machine learning techniques.
 - Improve the overall user experience.
 
-
-## 📄 License
-This project is developed for educational and learning purposes.
